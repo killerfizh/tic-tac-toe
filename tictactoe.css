@@ -1,0 +1,240 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:  linear-gradient(150deg,  rgb(23, 23, 26) 15%, #2a3147 70%, #1e1e2c 94%);
+    margin: 0;
+    
+}
+
+.heading h2{
+    color: grey;
+    text-align: center;
+    margin-bottom: -100px;
+    font-size: 70px;
+  
+}
+
+.heading h2:hover{
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate{
+
+    0%,100%{
+        color: dodgerblue;
+        filter: blur(2px);
+
+    }
+    5%,95%{
+        color: #fff;
+        filter: blur(0px);
+    }
+}
+
+
+#hint{
+    color: dodgerblue;
+    padding: 50px;
+    font-size: 80px;
+    margin-bottom: 50px;
+    animation: animate 2s linear infinite;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.heading{
+
+    margin-top: 60px;
+}
+
+
+.pre {
+    
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    flex-direction: column;
+    
+    
+}
+
+.pre.hide{
+    display: none;
+}
+
+.pre #p1_name{
+    margin-bottom: 60px;
+    margin-left: 32px;
+    width: 30%;
+    background: rgba(0, 0, 0, 0.9);
+    color: rgb(120, 41, 194);
+    
+}
+.pre #p2_name{
+    width: 30%;
+    margin-left: 24px;
+    background:  rgba(0, 0, 0, 0.9);
+    color: rgb(240, 148, 227);
+}
+.pre .intro{
+    padding-left: 250px;
+    padding-bottom: 100px;
+}
+
+#submit{
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-color: dodgerblue;
+}
+
+#submit:hover{
+    color: dodgerblue;
+    border-color: white;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 30px;
+    
+}
+.author{
+    text-align: center;
+    margin-bottom: 80px;
+}
+.link:hover{
+    text-decoration: none;
+}
+
+:root{
+    --boxsz: 80px;
+    --signsz: calc(var(--boxsz) * .9);
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: repeat(5,auto);
+}
+
+.box.x::before, .box.x::after{
+    background-color: dodgerblue;
+    box-shadow: 0 0 20px 0 dodgerblue;
+}
+
+.box.o::before, .box.o::after{
+    background-color: dodgerblue;
+    box-shadow: 0 0 20px 0 dodgerblue;
+}
+.container.x .box:not(.x):not(.o):hover::before, .container.x .box:not(.x):not(.o):hover::after {
+  background-color: grey;
+}
+.container.o .box:not(.x):not(.o):hover::before, .container.o .box:not(.x):not(.o):hover::after {
+  background-color: grey;
+}
+
+
+
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background-color: black;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.box.x, .box.o{
+    cursor: not-allowed;
+}
+
+.box.x::before, .box.x::after, .container.x .box:not(.x):not(.o):hover::before, .container.x .box:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    width: calc(var(--signsz) * .15);
+    height: var(--boxsz);
+}
+
+.box.x::before, .container.x .box:hover::before{
+    transform: rotate(45deg);
+}
+.box.x::after, .container.x .box:hover::after{
+    transform: rotate(-45deg);
+}
+
+
+.box.o::before, .box.o::after, .container.o .box:not(.x):not(.o):hover::before, .container.o .box:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    
+}
+
+.box.o::before, .container.o .box:not(.x):not(.o):hover::before{
+height: var(--signsz);
+width: var(--signsz);
+}
+
+.box.o::after, .container.o .box:not(.x):not(.o):hover::after{
+    height: calc(var(--signsz) * .7);
+    width: calc(var(--signsz) * .7);
+    background-color: black;
+}
+
+.conclusion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+    
+}
+
+.conclusion button{
+    
+    font-size: 3rem;
+    border: 3px solid dodgerblue;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+.conclusion button:hover{
+    border-color: dodgerblue;
+    color: dodgerblue;
+    border-color: white;
+
+}
+
+.conclusion.show{
+    display: flex;
+}
+
+
+
